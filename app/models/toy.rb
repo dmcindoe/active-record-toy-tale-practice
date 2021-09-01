@@ -10,14 +10,13 @@ class Toy < ActiveRecord::Base
   end
 
   def self.most_popular
-    purchases.map do |purchase|
-      purchase.count.maximum
+    # purchases.map do |purchase|
+    #   purchase.count.maximum
+   all.max_by {|toy| toy.purchases.count}
     end
 
     # the method below also works just like the map method above.... just need to be sure to set the variable to the correct class.
     #in this case, it shouldve been set to Toy. NOT Purchase. 
-
-    # all.max_by {|toy| toy.purchases.count}
   
   end
 
