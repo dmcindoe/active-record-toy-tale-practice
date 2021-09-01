@@ -3,6 +3,7 @@
 puts "Deleting toy/kid data..."
 Toy.destroy_all
 Kid.destroy_all
+Purchase.destroy_all
 
 puts "Creating toys..."
 woody = Toy.create(name: "Woody", price: 10)
@@ -22,5 +23,7 @@ puts "Creating purchases..."
 # * and a role belongs to an kid.                         *
 # ***********************************************************
 # Create Purchases Here
-
+Purchase.create(quantity: 1, kid_id: 1, toy_id: 1)
+Purchase.create(quantity: 2, kid_id: 2, toy_id: 2)
+Purchase.create(quantity: 3, kid_id: 3, toy_id: 3)
 puts "Seeding done!"
